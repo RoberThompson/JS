@@ -18,3 +18,22 @@ function countdown(n){
 }
 // Only change code above this line
 console.log(countdown(5));
+
+
+//range of numbers
+function rangeOfNumbers(startNum, endNum) {
+    
+    if(startNum==endNum){
+
+      return [startNum];}
+    
+    else{
+    const countArr=rangeOfNumbers(startNum+1,endNum);
+    countArr.unshift(startNum);
+    return countArr; 
+    }
+}
+
+console.log(rangeOfNumbers(5, 7));
+//
+
