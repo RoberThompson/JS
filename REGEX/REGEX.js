@@ -27,3 +27,13 @@ let result = extractStr.match(codingRegex); // Change this line
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /Twinkle/gi; // Change this line
 let result = twinkleStar.match(starRegex); // Change this line
+
+//wildcard character . will match any one character.
+//For example, if you wanted to match 
+//hug, huh, hut, and hum, //you can use the
+//regex /hu./ to match all four words.
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // Change this line
+let result = unRegex.test(exampleStr);
+
+
