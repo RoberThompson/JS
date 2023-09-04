@@ -41,4 +41,7 @@ let result = quoteSample.match(vowelRegex); // Change this line
 let unRegex = /.un/; // Change this line
 let result = unRegex.test(exampleStr);
 
-
+//match letters of alphabet.
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/ig; // Change this line
+let result = quoteSample.match(alphabetRegex); // Change this line
