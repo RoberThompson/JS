@@ -61,3 +61,7 @@ console.log(result);
 let text = "<h1>Winter is coming</h1>";
 let myRegex = /<.h*?1>/; // Change this line
 let result = text.match(myRegex);
+
+//Match all of the letters C in a string
+let reCriminals = /C+/g; // Change this line
+console.log(reCriminals);
