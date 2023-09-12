@@ -65,3 +65,8 @@ let result = text.match(myRegex);
 //Match all of the letters C in a string
 let reCriminals = /C+/g; // Change this line
 console.log(reCriminals);
+
+//Using $ to locate a word at the end of a statemetn
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
