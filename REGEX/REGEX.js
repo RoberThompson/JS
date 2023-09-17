@@ -70,3 +70,9 @@ console.log(reCriminals);
 let caboose = "The last car on a train is the caboose";
 let lastRegex = /caboose$/; // Change this line
 let result = lastRegex.test(caboose);
+
+
+let username = "JackOfAllTrades";//code is not a trade
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/gi; // Change this line
+let result = userCheck.test(username);
+console.log(result);
