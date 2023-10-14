@@ -46,3 +46,19 @@ function repeatStringNumTimes(str, num) {
 }
 console.log(repeatStringNumTimes("abc", 3));
 repeatStringNumTimes("abc", 3);
+
+//truncating a string
+//
+function truncateString(str, num) {
+  let myStr='';
+  if(str.length>num){    
+    for(let i=0;i<num;i++){
+      myStr+=str[i];
+    }
+    myStr+='...';
+    }
+    else{return str;}
+  return myStr;
+}
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
