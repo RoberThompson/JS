@@ -102,3 +102,28 @@ return true;
 }
 
 console.log(isEveryoneHere(users));
+
+//using for...in to iterate through an object.
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(allUsers) {
+  // Only change code below this line
+let i =0;
+for(const user in allUsers){
+  if(allUsers[user].online === true){ i++;} 
+}
+return i;
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
