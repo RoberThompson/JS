@@ -35,3 +35,14 @@ function confirmEnding(str, target) {
 
 confirmEnding("Bastian", "n");
 console.log(confirmEnding("He has to give me a new name", "name"));
+
+//
+//repeat a string given number of times
+function repeatStringNumTimes(str, num) {
+  let myStr='';
+  if(num>0){for(let i=0;i<num;i++){myStr+=str;}str=myStr;}
+  else{str='';}
+  return str;
+}
+console.log(repeatStringNumTimes("abc", 3));
+repeatStringNumTimes("abc", 3);
