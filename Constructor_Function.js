@@ -46,3 +46,48 @@ function House(numBedrooms) {
 // Only change code below this line
 let myHouse = new House(3);
 myHouse instanceof House;
+
+
+//name and numLegs are called own properties, because they are defined directly on the instance object. 
+//That means that duck and canary each has its own separate copy of these properties.
+
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+// Only change code below this line
+for(let property in canary){
+  if(canary.hasOwnProperty(property))
+  {ownProps.push(property);}
+}
+
+
+
+/*Use Prototype Properties to Reduce Duplicate Code
+
+Since numLegs will probably have the same value for all instances of Bird, 
+you essentially have a duplicated variable numLegs inside each Bird instance.
+
+This may not be an issue when there are only two instances,
+but imagine if there are millions of instances. That would be a lot of duplicated variables.
+
+A better way is to use the prototype of Bird. 
+Properties in the prototype are shared among ALL instances of Bird. Here's how to add numLegs to the Bird prototype:
+
+Bird.prototype.numLegs = 2;
+
+Since all instances automatically have the properties on the prototype,
+think of a prototype as a "recipe" for creating objects. Note that the prototype 
+for duck and canary is part of the Bird constructor as Bird.prototype. 
+*/
+
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code above this line
+let beagle = new Dog("Snoopy");
+Dog.prototype.numLegs = 4;
