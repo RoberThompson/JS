@@ -14,3 +14,7 @@ function Dog(){
   this.numLegs =4;
 
 }
+
+// Only change code below this line
+//creating a new instance of Dog using new keyword.
+let hound = new Dog();
