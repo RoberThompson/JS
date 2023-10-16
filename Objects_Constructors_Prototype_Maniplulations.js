@@ -131,3 +131,4 @@ for(let property in beagle){
   }
   else{prototypeProps.push(property);}
 }
+
