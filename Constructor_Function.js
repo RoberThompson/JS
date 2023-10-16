@@ -18,3 +18,31 @@ function Dog(){
 // Only change code below this line
 //creating a new instance of Dog using new keyword.
 let hound = new Dog();
+
+
+//Extend Constructors to Receive Arguments
+//notice that all Birds that are created with the Bird constructor are automatically named Albert, 
+//are blue in color, and have two legs. What if you want birds with different values for name and color?
+//To more easily create different Bird objects, you can design your Bird constructor to accept parameters:
+
+function Dog(name,color) {  
+  this.name = name;
+  this.color = color;
+  this.numLegs = 4;
+}
+
+let terrier = new Dog('Sparky','White');
+
+
+/*Anytime a constructor function creates a new object, that object is said to be an instance of its constructor. JavaScript gives a convenient way to
+verify this with the instanceof operator. instanceof allows you to compare an object to a constructor, 
+returning true or false based on whether or not that object was created with the constructor. */
+
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+
+}
+
+// Only change code below this line
+let myHouse = new House(3);
+myHouse instanceof House;
