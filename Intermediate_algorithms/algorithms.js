@@ -48,9 +48,11 @@ function destroyer(arr) {
 //Using spread operator to retrieve the arguments.
 // Return the filtered array, using includes().
 
-function destroyer(arr, ...valsToRemove) {
+function destroyer(arr,...valsToRemove) { 
   return arr.filter(elem => !valsToRemove.includes(elem));
 }
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 //***************
 //***************
