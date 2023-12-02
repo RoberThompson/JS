@@ -24,3 +24,16 @@ sumAll([1, 4]);
 
 //***************
 //***************
+
+//difference of two arrays
+function diffArray(arr1, arr2) {
+  return arr1
+   .concat(arr2)  
+   .filter(diff => !arr1.includes(diff) || !arr2.includes(diff));
+  
+}
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+//***************
+//***************
