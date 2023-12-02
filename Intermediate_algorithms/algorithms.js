@@ -13,5 +13,14 @@ function sumAll(arr) {
  console.log(sumAll([5, 10]));
 sumAll([1, 4]);
 
+//same thing but cleaner
+function sumAll(arr) {
+  const [first, last] = [...arr].sort((a, b) => a - b);
+  return first !== last
+    ? first + sumAll([first + 1, last])
+    : first;
+}
+sumAll([1, 4]);
+
 //***************
 //***************
