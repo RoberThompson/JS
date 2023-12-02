@@ -37,3 +37,20 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
 //***************
 //***************
+//seek and destroy
+function destroyer(arr) {
+  const valsToRemove = Array.from(arguments).slice(1);
+  return arr.filter(function(val) {
+    return !valsToRemove.includes(val);
+  });
+}
+
+//Using spread operator to retrieve the arguments.
+// Return the filtered array, using includes().
+
+function destroyer(arr, ...valsToRemove) {
+  return arr.filter(elem => !valsToRemove.includes(elem));
+}
+
+//***************
+//***************
