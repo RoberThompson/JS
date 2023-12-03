@@ -89,8 +89,22 @@ console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercu
 
 //***************
 //***************
+//Spinal Tap Case
+//Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
 
+function spinalCase(str) {
+  
+  return str
+  .replace(/([a-z])([A-Z])/g, "$1 $2")//replace lower to upper
+  .replace(/\s+|_+/g,'-')
+  .toLowerCase()  
+  
+}
+console.log(spinalCase('This Is Spinal Tap'));
+spinalCase('This Is Spinal Tap');
 
+//***********
+//***********
 
 
 
