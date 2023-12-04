@@ -105,7 +105,54 @@ spinalCase('This Is Spinal Tap');
 
 //***********
 //***********
+//Translate the provided string to Pig Latin. 
+//Input strings are guaranteed to be 
+//English words in all lowercase.
+function translatePigLatin(str) {
+  
+  const testRegex1=/^[aeiou]/;
+  
+  if(testRegex1.test(str)){
+   return str+'way';
+   }
+  else{
+    let i=0;
+    let substr1="";
+    while(!testRegex1.test(str[i])){
+     substr1+=str[i];
+     i++;    
+    }
+    return str.slice(i) + substr1 + 'ay';  
+  }
+}
 
+console.log(translatePigLatin("glove"));
+
+//or
+function translatePigLatin(str) {
+  let consonantRegex = /^[^aeiou]+/;
+  let myConsonants = str.match(consonantRegex);
+  return myConsonants !== null
+    ? str
+        .replace(consonantRegex, "")
+        .concat(myConsonants)
+        .concat("ay")
+    : str.concat("way");
+}
+
+//or
+function translatePigLatin(str) {
+  if (str.match(/^[aeiou]/)) return str + "way";
+  const consonantCluster = str.match(/^[^aeiou]+/)[0];
+  return str.substring(consonantCluster.length) + consonantCluster + "ay";
+}
+
+//or
+function translatePigLatin(str) {
+  return str
+    .replace(/^[aeiou]\w*/, "$&way")
+    .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+}
 
 
 
