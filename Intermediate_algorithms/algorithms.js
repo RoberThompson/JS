@@ -181,7 +181,79 @@ function myReplace(str, before, after) {
 
 console.log(myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped"));
 
+//*********
+//*********
+//DNA Pairing
+//Pairs of DNA strands consist of nucleobase pairs. Base pairs are represented by the characters AT and CG,
+//which form building blocks of the DNA double helix.
+//The DNA strand is missing the pairing element. Write a function to match the missing base pairs for the 
+//provided DNA strand. For each character in the provided string, find the base pair character. Return the results as a 2d array.
+//For example, for the input GCG, return [["G", "C"], ["C","G"], ["G", "C"]]
+//The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
 
+function pairElement(str) {
+  let arr=[];
+  for(let i=0;i<str.length;i++){
+    if (str.charAt(i)==='T'){
+     arr.push(['T','A']);}
+    else if (str.charAt(i)==='A'){
+     arr.push(['A','T']);}
+    else if (str.charAt(i)==='G'){
+      arr.push(['G','C']); }
+    else if (str.charAt(i)==='C'){
+      arr.push(['C','G']); }
+    
+  } 
+  return arr;
+}
+
+console.log(pairElement("GCG"));
+
+//or
+
+function pairElement(str) {
+  // Function to match each character with the base pair
+  const matchWithBasePair = function(char) {
+    switch (char) {
+      case "A":
+        return ["A", "T"];
+      case "T":
+        return ["T", "A"];
+      case "C":
+        return ["C", "G"];
+      case "G":
+        return ["G", "C"];
+    }
+  };
+
+   // Find pair for every character in the string
+  const pairs = [];
+  for (let i = 0; i < str.length; i++) {
+    pairs.push(matchWithBasePair(str[i]));
+  }
+
+ //or
+
+ function pairElement(str) {
+  // create object for pair lookup
+  const pairs = {
+    A: "T",
+    T: "A",
+    C: "G",
+    G: "C"
+  };
+
+  // map character to array of character and matching pair
+  return str
+    .split("")//spilt returns an array
+    .map(x => [x, pairs[x]]);
+}
+
+//*************
+//*************
+
+
+ 
 
 
 
