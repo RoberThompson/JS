@@ -252,7 +252,29 @@ function pairElement(str) {
 //*************
 //*************
 
+//Find the missing letter in the passed letter range and return it
+ 
+function fearNotLetter(str) {
+  
+  const arr=
+    ['a','b','c','d','e','f','g','h','i','j',
+    'k','l','m','n','o','p','q','r','s','t',
+    'u','v','w','x','y','z'];
+  
+  let arr2 = 
+    str.split('');
 
+  let index=arr.findIndex(element => element==arr2[0]); 
+  //console.log(index);
+  for(let i=index;i<=arr2.length+index;i++){
+    console.log(arr2[i-index]);
+    if(arr[i]!==arr2[i-index]){return arr[i];}
+    if(i==arr2.length+index){return undefined;}
+  }
+ 
+}
+
+console.log(fearNotLetter("bcdf"));
  
 
 
