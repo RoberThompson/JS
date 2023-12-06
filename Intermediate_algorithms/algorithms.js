@@ -275,6 +275,38 @@ function fearNotLetter(str) {
 }
 
 console.log(fearNotLetter("bcdf"));
+
+ //or
+
+ function fearNotLetter(str) {
+  let currCharCode = str.charCodeAt(0);
+  let missing = undefined;
+
+  str
+    .split("")
+    .forEach(letter => {
+      if (letter.charCodeAt(0) === currCharCode) {
+        currCharCode++;
+      } else {
+        missing = String.fromCharCode(currCharCode);
+      }
+    });
+
+  return missing;
+}
+
+// test here
+fearNotLetter("abce");
+
+ //or using ascii chars
+
+ function fearNotLetter(str) {
+  for (let i = 1; i < str.length; ++i) {
+    if (str.charCodeAt(i) - str.charCodeAt(i - 1) > 1) {
+      return String.fromCharCode(str.charCodeAt(i - 1) + 1);
+    }
+  }
+}
  
 
 
